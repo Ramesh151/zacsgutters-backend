@@ -1,0 +1,203 @@
+2024-07-24 15:24:41:2441 [32minfo[39m: [32mAttempting to create customer: rkmahto151@gmail.com[39m
+2024-07-24 15:28:18:2818 [32minfo[39m: [32mAttempting to create customer: rkmahto151@gmail.com[39m
+2024-07-24 15:28:18:2818 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 15:31:17:3117 [32minfo[39m: [32mAttempting to create customer: rkmahto151@gmail.com[39m
+2024-07-24 15:31:17:3117 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 15:32:25:3225 [32minfo[39m: [32mAttempting to create customer: rkmahto151@gmail.com[39m
+2024-07-24 15:32:25:3225 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 15:34:11:3411 [32minfo[39m: [32mAttempting to create customer: rkmahto151@gmail.com[39m
+2024-07-24 15:34:11:3411 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 15:35:47:3547 [32minfo[39m: [32mAttempting to create customer: rkmahto151@gmail.com[39m
+2024-07-24 15:35:47:3547 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 15:38:08:388 [32minfo[39m: [32mAttempting to create customer: rkmahto151@gmail.com[39m
+2024-07-24 15:38:08:388 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 15:50:30:5030 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 15:50:30:5030 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 15:53:02:532 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 15:56:16:5616 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 15:56:16:5616 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 15:56:16:5616 [33mwarn[39m: [33mNo locked slot found to unlock: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 15:56:16:5616 [31merror[39m: [31mError creating customer: date is not defined[39m
+2024-07-24 15:57:21:5721 [32minfo[39m: [32mAttempting to create customer: rkmahto151@gmail.com[39m
+2024-07-24 15:57:21:5721 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 15:57:21:5721 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:00-9:45 AM[39m
+2024-07-24 15:57:35:5735 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 15:57:35:5735 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 15:57:35:5735 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:45-10:30 AM[39m
+2024-07-24 16:02:52:252 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 16:02:52:252 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 16:02:52:252 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 16:02:52:252 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 16:02:52:252 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 16:02:52:252 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 16:03:16:316 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 16:03:16:316 [32minfo[39m: [32mAttempting to lock slot: 2024-07-26 9:45-10:30 AM[39m
+2024-07-24 16:03:16:316 [32minfo[39m: [32mSlot locked successfully:2024-07-26 9:45-10:30 AM[39m
+2024-07-24 16:03:18:318 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 0DD420686Y5732119[39m
+2024-07-24 16:04:05:45 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 16:04:05:45 [32minfo[39m: [32mAttempting to lock slot: 2024-07-26 9:45-10:30 AM[39m
+2024-07-24 16:04:05:45 [33mwarn[39m: [33mSlot 2024-07-26 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 16:04:05:45 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-26 9:45-10:30 AM[39m
+2024-07-24 16:04:05:45 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-26 9:45-10:30 AM[39m
+2024-07-24 16:04:05:45 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 16:06:20:620 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 16:06:20:620 [32minfo[39m: [32mAttempting to lock slot: 2024-07-26 9:45-10:30 AM[39m
+2024-07-24 16:06:20:620 [33mwarn[39m: [33mSlot 2024-07-26 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 16:06:20:620 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-26 9:45-10:30 AM[39m
+2024-07-24 16:06:20:620 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-26 9:45-10:30 AM[39m
+2024-07-24 16:06:20:620 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 16:14:03:143 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 16:14:03:143 [32minfo[39m: [32mAttempting to lock slot: 2024-07-26 9:45-10:30 AM[39m
+2024-07-24 16:14:03:143 [32minfo[39m: [32mSlot locked successfully:2024-07-26 9:45-10:30 AM[39m
+2024-07-24 16:14:06:146 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 6KW43484YL8630829[39m
+2024-07-24 16:35:42:3542 [32minfo[39m: [32mAttempting to create customer: rkmahto151@gmail.com[39m
+2024-07-24 16:35:42:3542 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 16:35:42:3542 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:00-9:45 AM[39m
+2024-07-24 16:35:44:3544 [32minfo[39m: [32mPayPal order created for customer: rkmahto151@gmail.com, orderId: 0U2869138A9726843[39m
+2024-07-24 16:58:12:5812 [32minfo[39m: [32mAttempting to create customer: rkmahto151@gmail.com[39m
+2024-07-24 16:58:12:5812 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 16:58:12:5812 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:00-9:45 AM[39m
+2024-07-24 16:58:14:5814 [32minfo[39m: [32mPayPal order created for customer: rkmahto151@gmail.com, orderId: 51P89359R0783652G[39m
+2024-07-24 16:58:47:5847 [32minfo[39m: [32mAttempting to create customer: rkmahto152@gmail.com[39m
+2024-07-24 16:58:47:5847 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 16:58:47:5847 [33mwarn[39m: [33mSlot 2024-07-25 9:00-9:45 AM is already locked or booked[39m
+2024-07-24 16:58:47:5847 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 16:58:47:5847 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 16:58:47:5847 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 17:03:34:334 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:03:34:334 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:03:34:334 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:03:37:337 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 5J596068XN730143S[39m
+2024-07-24 17:05:02:52 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:05:02:52 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:05:02:52 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 17:05:02:52 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:05:02:52 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:05:02:52 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 17:06:52:652 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:06:52:652 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:06:52:652 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 17:06:52:652 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:06:52:652 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:06:52:652 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 17:07:05:75 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:07:05:75 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:07:05:75 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 17:07:05:75 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:07:05:75 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:07:05:75 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 17:08:40:840 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:08:40:840 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:08:40:840 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:08:43:843 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 7L544957XF760180S[39m
+2024-07-24 17:08:52:852 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:08:52:852 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:08:52:852 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 17:08:52:852 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:08:52:852 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:08:52:852 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 17:09:37:937 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:09:37:937 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:09:37:937 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 17:09:37:937 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:09:37:937 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:09:37:937 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 17:11:51:1151 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:11:51:1151 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:11:51:1151 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:11:53:1153 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 8D549913D28787200[39m
+2024-07-24 17:11:59:1159 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:11:59:1159 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:11:59:1159 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 17:11:59:1159 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:11:59:1159 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:11:59:1159 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 17:27:50:2750 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:27:50:2750 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:27:50:2750 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:27:53:2753 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 31B03076JW4460152[39m
+2024-07-24 17:36:49:3649 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:36:49:3649 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:36:49:3649 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 17:36:49:3649 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:36:49:3649 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:36:49:3649 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 17:36:57:3657 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:36:57:3657 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 10:30-11:15 AM[39m
+2024-07-24 17:36:57:3657 [32minfo[39m: [32mSlot locked successfully:2024-07-25 10:30-11:15 AM[39m
+2024-07-24 17:36:59:3659 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 28468988RG929401F[39m
+2024-07-24 17:40:57:4057 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:40:57:4057 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:40:57:4057 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 17:40:57:4057 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:40:57:4057 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 17:40:57:4057 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 17:41:02:412 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:41:02:412 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 10:30-11:15 AM[39m
+2024-07-24 17:41:02:412 [33mwarn[39m: [33mSlot 2024-07-25 10:30-11:15 AM is already locked or booked[39m
+2024-07-24 17:41:02:412 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 10:30-11:15 AM[39m
+2024-07-24 17:41:02:412 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 10:30-11:15 AM[39m
+2024-07-24 17:41:02:412 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 17:41:07:417 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 17:41:07:417 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 11:15-12:00 PM[39m
+2024-07-24 17:41:07:417 [32minfo[39m: [32mSlot locked successfully:2024-07-25 11:15-12:00 PM[39m
+2024-07-24 17:41:09:419 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 4TT37302MT322851N[39m
+2024-07-24 18:41:14:4114 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 18:41:14:4114 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 18:41:15:4115 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:45-10:30 AM[39m
+2024-07-24 18:41:17:4117 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 92E24070G35181716[39m
+2024-07-24 18:42:02:422 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 18:42:02:422 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 18:42:02:422 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 18:42:02:422 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 18:42:02:422 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 18:42:02:422 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 18:42:50:4250 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 18:42:50:4250 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 10:30-11:15 AM[39m
+2024-07-24 18:42:50:4250 [32minfo[39m: [32mSlot locked successfully:2024-07-25 10:30-11:15 AM[39m
+2024-07-24 18:42:53:4253 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 7WR15296PT6429606[39m
+2024-07-24 19:01:30:130 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 19:01:30:130 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 10:30-11:15 AM[39m
+2024-07-24 19:01:30:130 [32minfo[39m: [32mSlot locked successfully:2024-07-25 10:30-11:15 AM[39m
+2024-07-24 19:01:33:133 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 0SE30850WM613144A[39m
+2024-07-24 19:09:59:959 [32minfo[39m: [32mAttempting to create customer: rkmahto152@gmail.com[39m
+2024-07-24 19:09:59:959 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:00-9:45 AM[39m
+2024-07-24 19:09:59:959 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:00-9:45 AM[39m
+2024-07-24 19:10:02:102 [32minfo[39m: [32mPayPal order created for customer: rkmahto152@gmail.com, orderId: 57M50907ED253334D[39m
+2024-07-24 19:12:23:1223 [32minfo[39m: [32mPayment captured successfully for customer: rkmahto152@gmail.com[39m
+2024-07-24 19:20:53:2053 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 19:20:53:2053 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 10:30-11:15 AM[39m
+2024-07-24 19:20:53:2053 [32minfo[39m: [32mSlot locked successfully:2024-07-25 10:30-11:15 AM[39m
+2024-07-24 19:20:55:2055 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 5RL11536G47786745[39m
+2024-07-24 23:33:00:330 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 23:33:00:330 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 23:33:00:330 [32minfo[39m: [32mSlot locked successfully:2024-07-25 9:45-10:30 AM[39m
+2024-07-24 23:33:03:333 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 2FH34889SX990223J[39m
+2024-07-24 23:35:57:3557 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 23:35:57:3557 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 23:35:57:3557 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 23:35:57:3557 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 23:35:57:3557 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 23:35:57:3557 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 23:36:14:3614 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 23:36:14:3614 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 11:15-12:00 PM[39m
+2024-07-24 23:36:14:3614 [32minfo[39m: [32mSlot locked successfully:2024-07-25 11:15-12:00 PM[39m
+2024-07-24 23:36:16:3616 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 6P638111GJ393214A[39m
+2024-07-24 23:46:45:4645 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 23:46:45:4645 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 23:46:45:4645 [33mwarn[39m: [33mSlot 2024-07-25 9:45-10:30 AM is already locked or booked[39m
+2024-07-24 23:46:45:4645 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 23:46:45:4645 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-25 9:45-10:30 AM[39m
+2024-07-24 23:46:45:4645 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-24 23:46:53:4653 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 23:46:53:4653 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 12:00-12:45 PM[39m
+2024-07-24 23:46:53:4653 [32minfo[39m: [32mSlot locked successfully:2024-07-25 12:00-12:45 PM[39m
+2024-07-24 23:46:56:4656 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 5BS03479AC875361M[39m
+2024-07-24 23:52:47:5247 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 23:52:47:5247 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 12:45-1:30 PM[39m
+2024-07-24 23:52:47:5247 [32minfo[39m: [32mSlot locked successfully:2024-07-25 12:45-1:30 PM[39m
+2024-07-24 23:52:49:5249 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 8B9297101N920051D[39m
+2024-07-24 23:54:34:5434 [32minfo[39m: [32mAttempting to create customer: rkmahto3184@gmail.com[39m
+2024-07-24 23:54:34:5434 [32minfo[39m: [32mAttempting to lock slot: 2024-07-25 1:30-2:15 PM[39m
+2024-07-24 23:54:34:5434 [32minfo[39m: [32mSlot locked successfully:2024-07-25 1:30-2:15 PM[39m
+2024-07-24 23:54:36:5436 [32minfo[39m: [32mPayPal order created for customer: rkmahto3184@gmail.com, orderId: 3DH395406X8978949[39m

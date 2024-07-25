@@ -1,0 +1,48 @@
+2024-07-19 13:09:44:944 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 13:10:01:101 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 13:26:56:2656 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 13:26:56:2656 [32minfo[39m: [32mAttempting to lock slot: 2024-07-31 10-11 AM[39m
+2024-07-19 13:26:56:2656 [32minfo[39m: [32mSlot locked successfully: 2024-07-31 10-11 AM[39m
+2024-07-19 13:27:00:270 [32minfo[39m: [32mPayPal order created for customer: ramesh@neelnetworks.com, orderId: 85D32075RH2036456[39m
+2024-07-19 14:03:57:357 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 14:03:57:357 [32minfo[39m: [32mAttempting to lock slot: 2024-07-31 10-11 AM[39m
+2024-07-19 14:03:57:357 [32minfo[39m: [32mSlot locked successfully: 2024-07-31 10-11 AM[39m
+2024-07-19 14:04:01:41 [32minfo[39m: [32mPayPal order created for customer: ramesh@neelnetworks.com, orderId: 4MV38471R77342927[39m
+2024-07-19 14:04:05:45 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 14:04:05:45 [32minfo[39m: [32mAttempting to lock slot: 2024-07-31 10-11 AM[39m
+2024-07-19 14:04:05:45 [33mwarn[39m: [33mSlot 2024-07-31 10-11 AM is already locked or booked[39m
+2024-07-19 14:11:16:1116 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 14:11:16:1116 [32minfo[39m: [32mAttempting to lock slot: 2024-07-31 10-11 AM[39m
+2024-07-19 14:11:16:1116 [33mwarn[39m: [33mSlot 2024-07-31 10-11 AM is already locked or booked[39m
+2024-07-19 16:17:26:1726 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 16:17:26:1726 [32minfo[39m: [32mAttempting to lock slot: 2024-07-20 9-10 AM[39m
+2024-07-19 16:17:26:1726 [32minfo[39m: [32mSlot locked successfully: 2024-07-20 9-10 AM[39m
+2024-07-19 16:17:26:1726 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-20 9-10 AM[39m
+2024-07-19 16:17:26:1726 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-20 9-10 AM[39m
+2024-07-19 16:17:26:1726 [31merror[39m: [31mError creating customer: price is not defined[39m
+2024-07-19 16:23:39:2339 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 16:23:39:2339 [32minfo[39m: [32mAttempting to lock slot: 2024-07-20 9-10 AM[39m
+2024-07-19 16:23:39:2339 [33mwarn[39m: [33mSlot 2024-07-20 9-10 AM is already locked or booked[39m
+2024-07-19 16:23:39:2339 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-20 9-10 AM[39m
+2024-07-19 16:23:39:2339 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-20 9-10 AM[39m
+2024-07-19 16:23:39:2339 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-19 16:38:46:3846 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 16:38:46:3846 [32minfo[39m: [32mAttempting to lock slot: 2024-07-20 10-11 AM[39m
+2024-07-19 16:38:46:3846 [32minfo[39m: [32mSlot locked successfully: 2024-07-20 10-11 AM[39m
+2024-07-19 16:38:46:3846 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-20 10-11 AM[39m
+2024-07-19 16:38:46:3846 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-20 10-11 AM[39m
+2024-07-19 16:38:46:3846 [31merror[39m: [31mError creating customer: paypal is not defined[39m
+2024-07-19 16:40:14:4014 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 16:40:14:4014 [32minfo[39m: [32mAttempting to lock slot: 2024-07-20 10-11 AM[39m
+2024-07-19 16:40:14:4014 [33mwarn[39m: [33mSlot 2024-07-20 10-11 AM is already locked or booked[39m
+2024-07-19 16:40:14:4014 [32minfo[39m: [32mAttempting to unlock slot: 2024-07-20 10-11 AM[39m
+2024-07-19 16:40:14:4014 [32minfo[39m: [32mSlot unlocked successfully: 2024-07-20 10-11 AM[39m
+2024-07-19 16:40:14:4014 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-19 16:40:31:4031 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 16:40:31:4031 [32minfo[39m: [32mAttempting to lock slot: 2024-07-20 10-11 AM[39m
+2024-07-19 16:40:31:4031 [32minfo[39m: [32mSlot locked successfully: 2024-07-20 10-11 AM[39m
+2024-07-19 16:40:34:4034 [32minfo[39m: [32mPayPal order created for customer: ramesh@neelnetworks.com, orderId: 3NM26664NX167464M[39m
+2024-07-19 16:57:46:5746 [32minfo[39m: [32mAttempting to create customer: ramesh@neelnetworks.com[39m
+2024-07-19 16:57:46:5746 [32minfo[39m: [32mAttempting to lock slot: 2024-07-20 10-11 AM[39m
+2024-07-19 16:57:46:5746 [32minfo[39m: [32mSlot locked successfully: 2024-07-20 10-11 AM[39m
+2024-07-19 16:57:48:5748 [32minfo[39m: [32mPayPal order created for customer: ramesh@neelnetworks.com, orderId: 50K82719W3871083S[39m

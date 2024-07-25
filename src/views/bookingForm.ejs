@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Booking Form</title>
+  <style>
+    /* Reset default margin and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea,
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 6px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    select {
+      appearance: auto;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .error-message {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #ffe6e6;
+      border: 1px solid #f0b0b0;
+      border-radius: 4px;
+      color: #c00;
+      display: none;
+    }
+
+    .date-picker, .time-picker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .date-picker button, .time-picker button {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .date-picker .dates, .time-picker .times {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .date-picker .date, .time-picker .time {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .date-picker .date.selected, .time-picker .time.selected {
+      background-color: #F0BC5E;
+      color: white;
+      border: 1px solid #F0BC5E;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Book a Service</h1>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="customerName">Name:</label>
+        <input type="text" id="customerName" name="customerName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="contactNumber">Contact Number:</label>
+        <input type="text" id="contactNumber" name="contactNumber" required>
+      </div>
+      <div class="form-group">
+        <label for="firstLineOfAddress">Address:</label>
+        <input type="text" id="firstLineOfAddress" name="firstLineOfAddress" required>
+      </div>
+      <div class="form-group">
+        <label for="town">Town:</label>
+        <input type="text" id="town" name="town" required>
+      </div>
+      <div class="form-group">
+        <label for="postcode">Postcode:</label>
+        <input type="text" id="postcode" name="postcode" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <div class="date-picker">
+          <button type="button" id="prevDate">&lt;</button>
+          <div class="dates" id="dates">
+            <!-- Dates will be dynamically inserted here -->
+          </div>
+          <button type="button" id="nextDate">&gt;</button>
+        </div>
+        <input type="hidden" id="selectedDate" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="timeSlot">Time Slot:</label>
+        <div class="time-picker">
+          <div class="times" id="times">
+            <!-- Time slots will be dynamically inserted here -->
+          </div>
+        </div>
+        <input type="hidden" id="selectedTimeSlot" name="timeSlot" required>
+      </div>
+      <div class="form-group">
+        <label for="selectService">Service:</label>
+        <select id="selectService" name="selectService" required>
+          <option value="Gutter Cleaning">Gutter Cleaning</option>
+          <option value="Gutter Wash Down">Gutter Wash Down</option>
+          <option value="Gutter Repair">Gutter Repair</option>
+          <option value="Gutter Replacement">Gutter Replacement</option>
+          <option value="Soffits and Fascias">Soffits and Fascias</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="numberOfBedrooms">Number of Bedrooms:</label>
+        <select id="numberOfBedrooms" name="numberOfBedrooms" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6+">6+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="numberOfStories">Number of Stories:</label>
+        <select id="numberOfStories" name="numberOfStories" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="howDidYouHearAboutUs">How did you hear about us?</label>
+        <select id="howDidYouHearAboutUs" name="howDidYouHearAboutUs" required>
+          <option value="Search Engine">Search Engine</option>
+          <option value="Recommendation">Recommendation</option>
+          <option value="Social Media">Social Media</option>
+          <option value="Flyers / Marketing">Flyers / Marketing</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="file">File (optional):</label>
+        <input type="file" id="file" name="file">
+      </div>
+      <div class="form-group">
+        <label for="message">Message (optional):</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method:</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+          <option value="paypal">PayPal</option>
+          <option value="cash">Cash</option>
+          <option value="online">Online</option>
+        </select>
+      </div>
+      <button type="submit">Book Now</button>
+    </form>
+
+    <div id="errorMessage" class="error-message"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const bookingForm = document.getElementById('bookingForm');
+      const errorMessage = document.getElementById('errorMessage');
+      const datesContainer = document.getElementById('dates');
+      const timesContainer = document.getElementById('times');
+      const prevDateBtn = document.getElementById('prevDate');
+      const nextDateBtn = document.getElementById('nextDate');
+      const selectedDateInput = document.getElementById('selectedDate');
+      const selectedTimeSlotInput = document.getElementById('selectedTimeSlot');
+
+      const timeSlots = [
+        '9:00-9:45 AM', '9:45-10:30 AM', '10:30-11:15 AM', 
+        '11:15 AM-12:00 PM', '12:00-12:45 PM', '12:45-1:30 PM', 
+        '1:30-2:15 PM', '2:15-3:00 PM'
+      ];
+
+      let currentDate = new Date();
+      let selectedDate = null;
+      let selectedTimeSlot = null;
+
+      function formatDate(date) {
+        const options = { weekday: 'short', day: 'numeric', month: 'short' };
+        return date.toLocaleDateString(undefined, options);
+      }
+
+      function renderDates() {
+        datesContainer.innerHTML = '';
+        for (let i = 0; i < 5; i++) {
+  const date = new Date();
+  date.setDate(date.getDate() + i);
+  // Rest of the code remains the same
+          date.setDate(currentDate.getDate() + i);
+          const dateElement = document.createElement('div');
+          dateElement.className = 'date';
+          dateElement.innerText = formatDate(date);
+          dateElement.dataset.date = date.toISOString().split('T')[0];
+          dateElement.addEventListener('click', function () {
+            selectedDate = dateElement.dataset.date;
+            selectedDateInput.value = selectedDate;
+            updateSelection(datesContainer, dateElement);
+          });
+          datesContainer.appendChild(dateElement);
+        }
+        updateSelection(datesContainer);
+      }
+
+      function renderTimeSlots() {
+        timesContainer.innerHTML = '';
+        timeSlots.forEach(slot => {
+          const timeElement = document.createElement('div');
+          timeElement.className = 'time';
+          timeElement.innerText = slot;
+          timeElement.dataset.time = slot;
+          timeElement.addEventListener('click', function () {
+            selectedTimeSlot = timeElement.dataset.time;
+            selectedTimeSlotInput.value = selectedTimeSlot;
+            updateSelection(timesContainer, timeElement);
+          });
+          timesContainer.appendChild(timeElement);
+        });
+        updateSelection(timesContainer);
+      }
+
+      function updateSelection(container, selectedElement) {
+        Array.from(container.children).forEach(child => {
+          child.classList.remove('selected');
+        });
+        if (selectedElement) {
+          selectedElement.classList.add('selected');
+        }
+      }
+
+      prevDateBtn.addEventListener('click', function () {
+        currentDate.setDate(currentDate.getDate() - 1);
+        renderDates();
+      });
+
+      nextDateBtn.addEventListener('click', function () {
+        currentDate.setDate(currentDate.getDate() + 1);
+        renderDates();
+      });
+
+      renderDates();
+      renderTimeSlots();
+
+      bookingForm.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        errorMessage.textContent = '';
+        errorMessage.style.display = 'none';
+
+        try {
+          const formData = new FormData(bookingForm);
+          const response = await fetch('/create', {
+            method: 'POST',
+            body: formData
+          });
+
+          if (!response.ok) {
+            throw new Error('Failed to submit form');
+          }
+
+          const responseData = await response.json();
+          console.log('Form submitted successfully:', responseData);
+          window.location.href = '/thank-you.html';
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          errorMessage.textContent = 'Failed to submit form. Please try again later.';
+          errorMessage.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

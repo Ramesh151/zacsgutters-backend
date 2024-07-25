@@ -1,0 +1,4 @@
+2024-07-19 16:17:26:1726 [31merror[39m: [31mError creating customer: price is not defined[39m
+2024-07-19 16:23:39:2339 [31merror[39m: [31mError creating customer: Slot is not available[39m
+2024-07-19 16:38:46:3846 [31merror[39m: [31mError creating customer: paypal is not defined[39m
+2024-07-19 16:40:14:4014 [31merror[39m: [31mError creating customer: Slot is not available[39m
