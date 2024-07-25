@@ -15,6 +15,7 @@ app.use(
       "https://localhost:3000",
       "http://localhost:5173",
       "https://www.sandbox.paypal.com",
+      "https://zacsgutters.vercel.app",
       "https://high-oaks-media-crm.vercel.app",
     ],
     credentials: true,
