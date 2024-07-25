@@ -77,15 +77,15 @@ const createCustomer = asyncHandler(async (req, res, next) => {
   if (!mumbaiPostcodes.includes(postcodePrefix)) {
     throw new ApiError(400, "We do not currently service this postcode area.");
   }
-  const existingCustomer = await Customer.findOne({
-    selectedDate: new Date(selectedDate),
-  });
-  if (existingCustomer) {
-    throw new ApiError(
-      400,
-      `This date is already booked by another customer: ${existingCustomer.email}`
-    );
-  }
+  // const existingCustomer = await Customer.findOne({
+  //   selectedDate: new Date(selectedDate),
+  // });
+  // if (existingCustomer) {
+  //   throw new ApiError(
+  //     400,
+  //     `This date is already booked by another customer: ${existingCustomer.email}`
+  //   );
+  // }
   let lockedCustomer = null;
   logger.info(`Attempting to create customer: ${email}`);
   try {
