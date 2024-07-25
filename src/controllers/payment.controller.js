@@ -230,13 +230,12 @@ const cancelPayment = asyncHandler(async (req, res) => {
       "This booking's payment has already been processed or cancelled"
     );
   }
-
   try {
-    await unlockSlot(customer.date, customer.timeSlot);
-    customer.paymentStatus = "cancelled";
-    await customer.save();
-
-    logger.info(`Booking cancelled for customer: ${customer.email}`);
+    // await unlockSlot(customer.date, customer.timeSlot);
+    // customer.paymentStatus = "cancelled";
+    // await customer.save();
+    // logger.info(`Booking cancelled for customer: ${customer.email}`);
+    await Customer.findByIdAndDelete(bookingId);
     return res.json(
       new ApiResponse(200, { customer }, "Booking successfully cancelled")
     );
