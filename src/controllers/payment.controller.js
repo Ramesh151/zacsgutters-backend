@@ -176,16 +176,7 @@ const checkCustomer = asyncHandler(async (req, res, next) => {
     paymentMethod,
     message,
   } = req.body;
-  let avatarUrls = [];
-
-  if (req.files && req.files.length > 0) {
-    req.files.forEach((file) => {
-      const avatarUrl = `${req.protocol}://${req.get("host")}/images/${
-        file.filename
-      }`;
-      avatarUrls.push(avatarUrl);
-    });
-  }
+  console.log("selectedDate", new Date(selectedDate));
 
   // Now `avatarUrls` contains URLs for all the uploaded files.
 
@@ -291,16 +282,6 @@ const createCustomer = asyncHandler(async (req, res, next) => {
     paymentMethod,
     message,
   } = req.body;
-  let avatarUrls = [];
-
-  if (req.files && req.files.length > 0) {
-    req.files.forEach((file) => {
-      const avatarUrl = `${req.protocol}://${req.get("host")}/images/${
-        file.filename
-      }`;
-      avatarUrls.push(avatarUrl);
-    });
-  }
   const mumbaiPostcodes = [
     "400001", // Fort
     "400002", // Kalbadevi
@@ -395,8 +376,6 @@ const createCustomer = asyncHandler(async (req, res, next) => {
       selectService,
       numberOfBedrooms,
       numberOfStories,
-      howDidYouHearAboutUs,
-      file: avatarUrls,
       message,
       paymentMethod,
       isLocked: true,

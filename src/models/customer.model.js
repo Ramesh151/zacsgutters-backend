@@ -56,19 +56,19 @@ const customerSchema = new mongoose.Schema(
       enum: ["1", "2", "3", "4"],
       // required: true,
     },
-    howDidYouHearAboutUs: {
-      type: String,
-      enum: [
-        "Search Engine",
-        "Recommendation",
-        "Social Media",
-        "Flyers / Marketing",
-        "Other",
-      ],
-      // required: true,
-    },
-    file: [{ type: String }],
-    message: { type: String, required: false },
+    // howDidYouHearAboutUs: {
+    //   type: String,
+    //   enum: [
+    //     "Search Engine",
+    //     "Recommendation",
+    //     "Social Media",
+    //     "Flyers / Marketing",
+    //     "Other",
+    //   ],
+    //   // required: true,
+    // },
+    // file: [{ type: String }],
+    message: { type: String },
     paymentMethod: {
       type: String,
       enum: ["PayPal", "Cash", "Online"],
