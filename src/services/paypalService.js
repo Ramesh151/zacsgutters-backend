@@ -33,7 +33,6 @@ export async function createOrder(amount, bookingDetails) {
   });
 
   const order = await client().execute(request);
-  console.log("order kk", order);
   return order.result;
 }
 

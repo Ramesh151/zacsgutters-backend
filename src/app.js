@@ -41,6 +41,14 @@ app.use(cookieParser());
 app.get("/", (req, res) => {
   res.render("bookingForm");
 });
+// Serve static files from the React app
+// app.use(express.static(path.join(__dirname, "client/build")));
+
+// // For any other routes, serve the React app
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client/build", "index.html"));
+// });
+
 //routes import
 import userRouter from "./routes/user.routes.js";
 import customerRoutes from "./routes/customer.routes.js";

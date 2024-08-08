@@ -35,7 +35,7 @@ const customerSchema = new mongoose.Schema(
       ],
       required: true,
     },
-    soffitsFascias: {
+    selectPropertyType: {
       type: String,
       enum: [
         "House Terraced",
@@ -48,7 +48,7 @@ const customerSchema = new mongoose.Schema(
     },
     numberOfBedrooms: {
       type: String,
-      enum: ["1", "2", "3", "4", "5", "6+"],
+      enum: ["1", "2", "3", "4", "5", "6"],
       // required: true,
     },
     numberOfStories: {
@@ -67,7 +67,7 @@ const customerSchema = new mongoose.Schema(
       ],
       // required: true,
     },
-    file: { type: String },
+    file: [{ type: String }],
     message: { type: String, required: false },
     paymentMethod: {
       type: String,
@@ -79,9 +79,11 @@ const customerSchema = new mongoose.Schema(
       enum: ["pending", "completed", "failed", "cancelled"],
       default: "pending",
     },
+
     paypalOrderId: { type: String },
     isLocked: { type: Boolean, default: false },
     lockExpiresAt: { type: Date },
+    isBooked: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
