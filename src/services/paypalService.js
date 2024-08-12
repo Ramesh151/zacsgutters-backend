@@ -13,6 +13,9 @@ function environment() {
 }
 
 export async function createOrder(amount, bookingDetails) {
+  console.log("log", amount);
+  console.log("log1", bookingDetails);
+
   const request = new checkoutNodeJssdk.orders.OrdersCreateRequest();
   request.prefer("return=representation");
   request.requestBody({
@@ -26,6 +29,8 @@ export async function createOrder(amount, bookingDetails) {
         description: `Service: ${bookingDetails.selectService}, Date: ${bookingDetails.selectedDate}, Time: ${bookingDetails.selectedTimeSlot}`,
       },
     ],
+    // Gutter Repairs Options: ${bookingDetails.gutterRepairsOptions}, gutterCleaningOptions:${bookingDetails.gutterCleaningOptions},
+
     application_context: {
       return_url: "http://localhost:5173/paypal/return", // Specify your return_url here
       cancel_url: "http://localhost:5173/booking-cancelled", // Specify your cancel_url here
@@ -48,6 +53,29 @@ export async function checkOrderStatus(orderId) {
   const request = new checkoutNodeJssdk.orders.OrdersGetRequest(orderId);
   const response = await client().execute(request);
   return response.result;
+}
+export async function refundPayment(captureId, amount) {
+  // Capture ID ko use karte hain jo aapko payment capture ke response se milta hai
+  const request = new checkoutNodeJssdk.payments.CapturesRefundRequest(
+    captureId
+  );
+
+  // Agar partial refund chahiye toh amount specify karein, otherwise use empty object for full refund
+  request.requestBody({
+    amount: {
+      currency_code: "USD",
+      value: amount.toString(), // Refund amount ko string mein convert karna
+    },
+  });
+
+  try {
+    const response = await client().execute(request);
+    console.log("Refund response:", response);
+    return response.result;
+  } catch (error) {
+    console.error("Refund error:", error);
+    throw error;
+  }
 }
 
 // import Booking from '../models/Booking.js';
