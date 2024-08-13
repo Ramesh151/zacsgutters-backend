@@ -10,6 +10,7 @@ import {
   sendCustomerConfirmationEmail,
   sendAdminNotificationEmail,
 } from "../utils/emailService.js";
+
 const checkCustomer = asyncHandler(async (req, res, next) => {
   try {
     const {
@@ -34,7 +35,26 @@ const checkCustomer = asyncHandler(async (req, res, next) => {
 
     // Convert selectedDate to Date object
     const date = new Date(selectedDate);
-    console.log("selectedDate", date);
+    if (isNaN(date.getTime())) {
+      throw new ApiError(400, "Invalid date format. Please use YYYY-MM-DD.");
+    }
+
+    // Ensure that selectedDate is not today
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0); // Set to start of the day
+    if (date.toDateString() === currentDate.toDateString()) {
+      throw new ApiError(400, "Bookings for today are not allowed.");
+    }
+
+    // Ensure that selectedDate is a weekday (Monday to Friday)
+    const dayOfWeek = date.getDay();
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+      // 0 = Sunday, 6 = Saturday
+      throw new ApiError(
+        400,
+        "Bookings are only allowed from Monday to Friday."
+      );
+    }
 
     // Define valid postcodes
     const validPostcodes = ["RH10", "RH11", "RH12", "RH13"];
@@ -49,7 +69,10 @@ const checkCustomer = asyncHandler(async (req, res, next) => {
     }
 
     // Check for existing bookings on the selected date
-    const existingCustomers = await Customer.find({ selectedDate: date });
+    const formattedDate = date.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+    const existingCustomers = await Customer.find({
+      selectedDate: formattedDate,
+    });
 
     if (existingCustomers.length > 0) {
       const existingCustomer = existingCustomers[0];
@@ -73,19 +96,34 @@ const checkCustomer = asyncHandler(async (req, res, next) => {
       }
     }
 
-    // Check if the selected time slot is in the future
+    // Get current date and time
     const currentTime = new Date();
-    const [startHour, startMinute] = selectedTimeSlot.split("-")[0].split(":");
-    const selectedSlotDate = new Date(date);
-    selectedSlotDate.setHours(
-      parseInt(startHour, 10),
-      parseInt(startMinute, 10)
-    );
 
-    if (selectedSlotDate <= currentTime) {
+    // Parse selected time slot
+    const [startTime, endTime] = selectedTimeSlot.split("-");
+    const [startHour, startMinute] = parseTime(startTime);
+    const [endHour, endMinute] = parseTime(endTime);
+
+    // Create Date objects for the start and end time of the selected time slot
+    const selectedSlotStart = new Date(date);
+    selectedSlotStart.setHours(startHour, startMinute, 0, 0);
+
+    const selectedSlotEnd = new Date(date);
+    selectedSlotEnd.setHours(endHour, endMinute, 0, 0);
+
+    // Check if the selected time slot is currently in progress
+    if (currentTime >= selectedSlotStart && currentTime <= selectedSlotEnd) {
       throw new ApiError(
         400,
-        "The selected time slot is in the past or too soon. Please select a future time slot."
+        "The selected time slot is currently in progress. Please select a different time slot."
+      );
+    }
+
+    // Ensure the selected time slot is in the future
+    if (selectedSlotStart < currentTime) {
+      throw new ApiError(
+        400,
+        "The selected time slot is in the past. Please select a future time slot."
       );
     }
 
@@ -98,6 +136,229 @@ const checkCustomer = asyncHandler(async (req, res, next) => {
     next(error);
   }
 });
+
+// Helper function to parse time in HH:MM format
+const parseTime = (timeStr) => {
+  const [hour, minute] = timeStr.split(":").map(Number);
+  return [hour, minute];
+};
+
+// const checkCustomer = asyncHandler(async (req, res, next) => {
+//   try {
+//     const {
+//       customerName,
+//       email,
+//       contactNumber,
+//       firstLineOfAddress,
+//       town,
+//       postcode,
+//       selectedDate,
+//       selectedTimeSlot,
+//       selectService,
+//       numberOfBedrooms,
+//       paymentMethod,
+//       message,
+//     } = req.body;
+
+//     // Validate input
+//     if (!email || !postcode || !selectedDate || !selectedTimeSlot) {
+//       throw new ApiError(400, "Required fields are missing.");
+//     }
+
+//     // Convert selectedDate to Date object
+//     const date = new Date(selectedDate);
+//     console.log("selectedDate1", date);
+
+//     // Ensure that selectedDate is not today
+//     const currentDate = new Date();
+//     currentDate.setHours(0, 0, 0, 0); // Set to start of the day
+//     if (date.toDateString() === currentDate.toDateString()) {
+//       throw new ApiError(400, "Bookings for today are not allowed.");
+//     }
+
+//     // Ensure that selectedDate is a weekday (Monday to Friday)
+//     const dayOfWeek = date.getDay();
+//     if (dayOfWeek === 0 || dayOfWeek === 6) {
+//       // 0 = Sunday, 6 = Saturday
+//       throw new ApiError(
+//         400,
+//         "Bookings are only allowed from Monday to Friday."
+//       );
+//     }
+
+//     // Define valid postcodes
+//     const validPostcodes = ["RH10", "RH11", "RH12", "RH13"];
+//     const postcodePrefix = postcode.split(" ")[0].toUpperCase();
+
+//     // Check if the postcode is valid
+//     if (!validPostcodes.includes(postcodePrefix)) {
+//       throw new ApiError(
+//         400,
+//         "We do not currently service this postcode area."
+//       );
+//     }
+//     const formattedDate = date.toISOString().split("T")[0];
+//     // Check for existing bookings on the selected date
+//     const existingCustomers = await Customer.find({
+//       selectedDate: formattedDate,
+//     });
+//     console.log("exting customer", existingCustomers);
+
+//     if (existingCustomers.length > 0) {
+//       const existingCustomer = existingCustomers[0];
+
+//       if (existingCustomer.postcode !== postcode) {
+//         throw new ApiError(
+//           400,
+//           `Bookings are already made for this date. Only customers from the same postcode area (${existingCustomer.postcode}) can book for this date.`
+//         );
+//       }
+
+//       if (
+//         existingCustomers.some(
+//           (customer) => customer.selectedTimeSlot === selectedTimeSlot
+//         )
+//       ) {
+//         throw new ApiError(
+//           400,
+//           `The selected time slot is already booked: ${selectedTimeSlot}`
+//         );
+//       }
+//     }
+
+//     // Get current date and time
+//     const currentTime = new Date();
+//     console.log("current time", currentTime);
+
+//     // Parse selected time slot
+//     const [startTime, endTime] = selectedTimeSlot.split("-");
+//     const [startHour, startMinute] = parseTime(startTime);
+//     const [endHour, endMinute] = parseTime(endTime);
+
+//     // Create Date objects for the start and end time of the selected time slot
+//     const selectedSlotStart = new Date(date);
+//     selectedSlotStart.setHours(startHour, startMinute, 0, 0);
+
+//     const selectedSlotEnd = new Date(date);
+//     selectedSlotEnd.setHours(endHour, endMinute, 0, 0);
+
+//     // Check if the selected time slot is currently in progress
+//     if (currentTime >= selectedSlotStart && currentTime <= selectedSlotEnd) {
+//       throw new ApiError(
+//         400,
+//         "The selected time slot is currently in progress. Please select a different time slot."
+//       );
+//     }
+
+//     // Ensure the selected time slot is in the future
+//     if (selectedSlotStart < currentTime) {
+//       throw new ApiError(
+//         400,
+//         "The selected time slot is in the past. Please select a future time slot."
+//       );
+//     }
+
+//     logger.info(`Attempting to create customer: ${email}`);
+//     return res
+//       .status(201)
+//       .json(new ApiResponse(200, {}, "Check Availability successful"));
+//   } catch (error) {
+//     logger.error(`Error Checking Availability for customer: ${error.message}`);
+//     next(error);
+//   }
+// });
+
+// const checkCustomer = asyncHandler(async (req, res, next) => {
+//   try {
+//     const {
+//       customerName,
+//       email,
+//       contactNumber,
+//       firstLineOfAddress,
+//       town,
+//       postcode,
+//       selectedDate,
+//       selectedTimeSlot,
+//       selectService,
+//       numberOfBedrooms,
+//       paymentMethod,
+//       message,
+//     } = req.body;
+//     console.log("selected date", selectedDate);
+
+//     // Validate input
+//     if (!email || !postcode || !selectedDate || !selectedTimeSlot) {
+//       throw new ApiError(400, "Required fields are missing.");
+//     }
+
+//     // Convert selectedDate to Date object
+//     const date = new Date(selectedDate);
+//     console.log("selectedDate1", date);
+
+//     // Define valid postcodes
+//     const validPostcodes = ["RH10", "RH11", "RH12", "RH13"];
+//     const postcodePrefix = postcode.split(" ")[0].toUpperCase();
+
+//     // Check if the postcode is valid
+//     if (!validPostcodes.includes(postcodePrefix)) {
+//       throw new ApiError(
+//         400,
+//         "We do not currently service this postcode area."
+//       );
+//     }
+
+//     // Check for existing bookings on the selected date
+//     const existingCustomers = await Customer.find({ selectedDate: date });
+
+//     if (existingCustomers.length > 0) {
+//       const existingCustomer = existingCustomers[0];
+
+//       if (existingCustomer.postcode !== postcode) {
+//         throw new ApiError(
+//           400,
+//           `Bookings are already made for this date. Only customers from the same postcode area (${existingCustomer.postcode}) can book for this date.`
+//         );
+//       }
+
+//       if (
+//         existingCustomers.some(
+//           (customer) => customer.selectedTimeSlot === selectedTimeSlot
+//         )
+//       ) {
+//         throw new ApiError(
+//           400,
+//           `The selected time slot is already booked: ${selectedTimeSlot}`
+//         );
+//       }
+//     }
+
+//     // Check if the selected time slot is in the future
+//     const currentTime = new Date();
+//     const [startHour, startMinute] = selectedTimeSlot.split("-")[0].split(":");
+//     const selectedSlotDate = new Date(date);
+//     selectedSlotDate.setHours(
+//       parseInt(startHour, 10),
+//       parseInt(startMinute, 10)
+//     );
+//     console.log("current time", currentTime);
+
+//     if (selectedSlotDate <= currentTime) {
+//       throw new ApiError(
+//         400,
+//         "The selected time slot is in the past or too soon. Please select a future time slot."
+//       );
+//     }
+
+//     logger.info(`Attempting to create customer: ${email}`);
+//     return res
+//       .status(201)
+//       .json(new ApiResponse(200, {}, "Check Availability successful"));
+//   } catch (error) {
+//     logger.error(`Error Checking Availability for customer: ${error.message}`);
+//     next(error);
+//   }
+// });
+
 const createCustomer = asyncHandler(async (req, res, next) => {
   try {
     const {
@@ -119,6 +380,25 @@ const createCustomer = asyncHandler(async (req, res, next) => {
       paymentMethod,
       message,
     } = req.body;
+
+    const date = new Date(selectedDate);
+
+    // Ensure that selectedDate is not today
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0); // Set to start of the day
+    if (date.toDateString() === currentDate.toDateString()) {
+      throw new ApiError(400, "Bookings for today are not allowed.");
+    }
+
+    // Ensure that selectedDate is a weekday (Monday to Friday)
+    const dayOfWeek = date.getDay();
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+      // 0 = Sunday, 6 = Saturday
+      throw new ApiError(
+        400,
+        "Bookings are only allowed from Monday to Friday."
+      );
+    }
 
     // Define valid postcodes
     const validPostcodes = ["RH10", "RH11", "RH12", "RH13"];
@@ -143,10 +423,10 @@ const createCustomer = asyncHandler(async (req, res, next) => {
     ) {
       throw new ApiError(400, "Required fields are missing.");
     }
-
+    const formattedDate = date.toISOString().split("T")[0];
     // Check for existing bookings on the selected date
     const existingBookings = await Customer.find({
-      selectedDate: new Date(selectedDate),
+      selectedDate: formattedDate,
     });
 
     if (existingBookings.length > 0) {
@@ -179,6 +459,8 @@ const createCustomer = asyncHandler(async (req, res, next) => {
       parseInt(startHour, 10),
       parseInt(startMinute, 10)
     );
+    console.log("current time", currentTime);
+    console.log("ccc", Date.now);
 
     if (selectedSlotDate <= currentTime) {
       throw new ApiError(
@@ -201,7 +483,7 @@ const createCustomer = asyncHandler(async (req, res, next) => {
       firstLineOfAddress,
       town,
       postcode,
-      selectedDate,
+      selectedDate: formattedDate,
       selectedTimeSlot,
       selectService,
       gutterCleaningOptions,
@@ -337,43 +619,44 @@ const capturePayment = asyncHandler(async (req, res, next) => {
 const cancelPayment = asyncHandler(async (req, res, next) => {
   const { bookingId } = req.params;
 
-  // const customer = await Customer.findOne({ paypalOrderId: bookingId });
-  // if (!customer) {
-  //   throw new ApiError(404, " customerId Booking not found");
-  // }
-  // if (customer.paymentStatus !== "pending") {
-  //   throw new ApiError(
-  //     400,
-  //     "This booking's payment has already been processed or cancelled"
-  //   );
-  // }
+  const customer = await Customer.findOne({ paypalOrderId: bookingId });
+  if (!customer) {
+    throw new ApiError(404, " customer Booking not found");
+  }
+  if (customer.paymentStatus !== "pending") {
+    throw new ApiError(
+      400,
+      "This booking's payment has already been processed or cancelled"
+    );
+  }
   try {
     // Fetch order details from PayPal
-    const order = await paypalService.checkOrderStatus(bookingId);
-    console.log("orderrr", order);
+    // const order = await paypalService.checkOrderStatus(bookingId);
 
-    if (order.status !== "CANCELLED") {
-      throw new ApiError(400, "Order is not canceled.");
-    }
+    // console.log("orderrr", order);
+
+    // if (order.status !== "CANCELLED") {
+    //   throw new ApiError(400, "Order is not canceled.");
+    // }
 
     // Find the customer based on the PayPal order ID
-    const customer = await Customer.findOne({ paypalOrderId: bookingId });
+    // const customer = await Customer.findOne({ paypalOrderId: bookingId });
 
-    if (!customer) {
-      throw new ApiError(404, "Customer not found.");
-    }
+    // if (!customer) {
+    //   throw new ApiError(404, "Customer not found.");
+    // }
 
     // Update customer record
-    customer.paymentStatus = "canceled";
-    customer.isBooked = false;
-    customer.isLocked = false;
-    customer.lockExpiresAt = null;
+    // customer.paymentStatus = "canceled";
+    // customer.isBooked = false;
+    // customer.isLocked = false;
+    // customer.lockExpiresAt = null;
 
     // Unlock any resources or slots
-    await unlockSlot(customer.selectedDate, customer.selectedTimeSlot);
+    // await unlockSlot(customer.selectedDate, customer.selectedTimeSlot);
 
     // Save updated customer details
-    await customer.save();
+    await Customer.findByIdAndDelete(customer._id);
 
     // Send cancellation email to the customer
     // await sendCustomerCancellationEmail(customer);
@@ -389,7 +672,7 @@ const cancelPayment = asyncHandler(async (req, res, next) => {
       .json(
         new ApiResponse(
           200,
-          { order, customer },
+          { customer },
           "Payment cancellation processed successfully."
         )
       );
@@ -467,7 +750,6 @@ const handleCanceledPayment = asyncHandler(async (req, res, next) => {
   if (!orderId) {
     throw new ApiError(400, "Order ID is required.");
   }
-
   try {
     // Fetch order details from PayPal
     const order = await paypalService.checkOrderStatus(orderId);
