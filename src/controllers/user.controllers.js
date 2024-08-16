@@ -25,6 +25,37 @@ const generateAccessAndRefereshTokens = async (userId) => {
     );
   }
 };
+// Refresh token endpoint
+const refreshToken = asyncHandler(async (req, res) => {
+  const { refreshToken } = req.cookies;
+
+  if (!refreshToken) {
+    throw new ApiError(401, "Refresh token missing");
+  }
+
+  try {
+    const { userId } = jwt.verify(
+      refreshToken,
+      process.env.REFRESH_TOKEN_SECRET
+    );
+    const user = await User.findById(userId);
+
+    if (!user || user.refreshToken !== refreshToken) {
+      throw new ApiError(401, "Invalid refresh token");
+    }
+
+    const { accessToken } = generateTokens(userId);
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+    });
+
+    res.status(200).json({ accessToken });
+  } catch (error) {
+    throw new ApiError(401, "Invalid or expired refresh token");
+  }
+});
 
 const registerUser = asyncHandler(async (req, res, next) => {
   const {
@@ -139,7 +170,10 @@ const loginUser = asyncHandler(async (req, res, next) => {
     return res
       .status(200)
       .cookie("accessToken", accessToken, options)
-      .cookie("refreshToken", refreshToken, options)
+      .cookie("refreshToken", refreshToken, {
+        ...options,
+        maxAge: 7 * 24 * 60 * 60 * 10000,
+      })
       .json(
         new ApiResponse(
           200,
@@ -274,6 +308,7 @@ const resetPasswordForForget = asyncHandler(async (req, res) => {
 });
 
 export {
+  refreshToken,
   registerUser,
   loginUser,
   logoutUser,
